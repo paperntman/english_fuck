@@ -3,46 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>topen_memo</title>
+    <title>topen-memo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://npmcdn.com/bezier-easing@2.0.3/dist/bezier-easing.min.js"></script>
 
     <style>
 
         html, body {
             width: 100%;
-            height: 100%;
+            height: 36000px;
             margin : 0;
         }
-        p {
-            position : absolute;
-            margin: 100px;
-            line-height: 100px;
+
+        .bg {
+            position: fixed;
+            background: url("img.png");
+            width: 100%;
+            height: 100vh;
+            margin: 0;
         }
 
-        #background {
-            margin: 0;
-            padding: 0;
-            color: white;
-            background-image: url('img.png');
+        .tc {
+            text-align: center;
+        }
+
+        .container-big {
             position: fixed;
             width: 100%;
-            height: 100%
+            height: 500px;
+            top: 50%; /*굉장히중요*/
+            margin: -250px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container-small {
+            height: min-content;
+        }
+
+        #scroll {
+            position: fixed;
+            font-size: 24px;
+            color: white;
+        }
+
+        h1 {
+            line-height:50%;
+            color: white;
+        }
+
+        .f72 {
+            font-size: 72px;
+        }
+
+        .f24 {
+            font-size: 24px;
+        }
+
+        .f36 {
+            font-size: 36px;
+        }
+
+        .f48 {
+            font-size: 48px;
+        }
+
+        .cog {
+            color: gray;
+        }
+
+        .sans {
+            color: dodgerblue;
+            font-size: 48px;
         }
     </style>
 </head>
 <body>
-    <div id="background">
-        scrollTop: 0
+
+<div class="background">
+    <div class="bg"></div>
+    <div id="scroll">scroll</div>
+
+    <div id="description" class="container-big">
+        <div class="container-small">
+            <p class="f36 cog">Please scroll down</p>
+        </div>
+    </div>
+    <div id="titles" class="container-big">
+        <div class="container-small">
+            <h1 class="tc f72" >K-SDGs 14</h1>
+            <h1 class="tc f72">LIFE BELOW WATER</h1>
+            <h1 class="tc f24">made by memo, topen0330</h1>
+        </div>
+    </div>
+    <div id="first-first" class="container-big">
+        <div class="container-small">
+            <h1>Since the industrialization era,</h1>
+            <h1 class="sans">seawater has become <span id="1">26%</span> more acidic</h1>
+            <h1>due to the rapid increase in carbon dioxide emissions.</h1>
+        </div>
+    </div>
+    <div id="first-second" class="container-big">
+        <div class="container-small">
+            <h1>Consequently,</h1>
+            <h1>the proportion of fish species at a biologically sustainable level</h1>
+            <h1>has drastically <span class="sans">decreased 90% to <span id="2">67%.</span></span></h1>
+        </div>
+    </div>
+    <div id="first-third" class="container-big">
+        <div class="container-small">
+            <h1>In South Korea,</h1>
+            <h1>the amount of waste collected in 2021 increased by a <span class="sans">factor of five</span> compared to 2008,</h1>
+            <h1>with <span class="sans">90% of it being plastic.</span></h1>
+        </div>
+    </div>
+    <div id="first-fourth" class="container-big">
+        <div class="container-small">
+            <h1>Given the gravity of this situation,</h1>
+            <h1><span class="sans">87 countries have come together</span> to sign the Port State Action Agreement.</h1>
+        </div>
+    </div>
+    <div id="first-fifth" class="container-big">
+        <div class="container-small">
+            <h1>And since 2010,</h1>
+            <h1>the number of territorial waters designated as protected areas has doubled.</h1>
+        </div>
+    </div>
+    <div id="first-sixth" class="container-big">
+        <div class="container-small">
+            <h1 class="sans">Why are they making such extensive efforts to preserve the ocean?</h1>
+        </div>
     </div>
 
-    <h1></h1>
+
+    <div id="second-first" class="container-big">
+        <div class="container-small tc">
+            <h1>There are</h1>
+            <h1>about <span class="sans">212,000 species</span> of marine animals,</h1>
+            <h1>also about <span class="sans">1.5 million animals live</span>  in the sea.</h1>
+        </div>
+    </div>
+    <div id="second-second" class="container-big">
+        <div class="container-small">
+            <h1>The destruction of such a vast marine ecosystem will not only harm the planet,</h1>
+            <h1>but will also <span class="sans">make it impossible to recover</span> from the damage caused by this negative impact.</h1>
+        </div>
+    </div>
+    <div id="second-third" class="container-big">
+        <div class="container-small">
+            <h1>Additionally,  </h1>
+            <h1>the ocean absorbs a <span class="sans">quarter of the carbon dioxide</span> in the atmosphere,</h1>
+            <h1>which is highly beneficial in offsetting global warming.</h1>
+        </div>
+    </div>
+    <div id="second-fourth" class="container-big">
+        <div class="container-small">
+            <h1>However, as carbon dioxide levels rise,</h1>
+            <h1>oceans become acidified, leading to the loss of vital resources and harm to marine life.</h1>
+            <h1>As a result, the challenge of preventing global warming will become <span class="sans">exceedingly difficult.</span></h1>
+        </div>
+    </div>
+    <div id="second-fifth" class="container-big">
+        <div class="container-small tc">
+            <h1>Additionally, the ocean <span class="sans">offers substantial economic benefits</span> to humans.</h1>
+            <h1>Scientists have found that designating marine sanctuaries</h1>
+            <h1>can boost tourism and bring economic advantages to nearby fisheries.</h1>
+        </div>
+    </div>
+    <div id="second-sixth" class="container-big">
+        <div class="container-small tc f24">
+            <h1>Thus, protecting the ocean is essential..</h1>
+            <h1>Then, What can we do in response?</h1>
+        </div>
+    </div>
+    
+    <div id="third-first" class="container-big">
+        <div class="container-small tc">
+            <h1 class="f48">First and foremost,</h1>
+            <h1 class="f48">we need to reduce <span class="sans">unnecessary plastic usage.</span></h1>
+        </div>
+    </div>
+    <div id="third-second" class="container-big">
+        <div class="container-small">
+            <h1 class="sans">Reducing unnecessary plastic use is essential to combat ocean pollution.</h1>
+            <h1>Using reusable items like tumblers and eco bags helps significantly reduce plastic waste.</h1>
+            <h1>By making conscious choices to avoid single-use plastics,</h1>
+            <h1>we can prevent them from ending up in the ocean and harming marine life.</h1>
+        </div>
+    </div>
+    <div id="third-third" class="container-big">
+        <div class="container-small">
+            <h1><span class="sans">Making sustainable seafood choices</span> is crucial for the health of our oceans.</h1>
+            <h1>Opting for seafood that has been responsibly sourced, <span class="cog f24">such as tuna caught using the pole fishing method,</span></h1>
+            <h1></h1>
+            <h1>It is important to develop the habit of considering seafood purchases carefully.</h1>
+        </div>
+    </div>
+    <div id="fin" class="container-big">
+        <div class="container-small">
+            <h1>ty</h1>
+        </div>
+    </div>
+</div>
+
 
 
 </body>
-</html>
 
 <script>
-    const output = document.querySelector("#background");
-    window.addEventListener("scroll", () => {
-        output.textContent = `scrollTop: ${window.scrollY}`
-    });
+    import BezierEasing from 'bezier-easing';
+    const ease = BezierEasing(0.25, 0.1, 0.25, 1.0);
+    const easeIn = BezierEasing(0.38, 0.01, 0.78, 0.13);
+    const midSlow = BezierEasing(0, 0.7, 1, 0.3);
+    let scrollY = 0
+
+
+    const output = document.querySelector("#scroll");
+    window.addEventListener("scroll", init);
+    init()
+
+    function marginEase(number) { // 1300 100 600
+        if (number <= scrollY && scrollY <= (number + 2)) {
+            return -(midSlow((scrollY - number)/2)-0.5)/5*2+0.5
+        }
+    }
+
+    function marginEased(number, duration) { // 1300 100 600
+        if (number <= scrollY && scrollY <= (number + duration)) {
+            return -(midSlow((scrollY - number)/duration)-0.5)/5*2+0.5
+        }
+    }
+
+    function opacityEase(number) {
+        if(scrollY <= number) return 0;
+        if(scrollY >= (number+2)) return 0;
+        if(scrollY <= (number+0.3)){
+            return ease((scrollY-number)/0.3)
+        }
+
+        else if((number+1.4) <= scrollY){
+            return 1-(easeIn((scrollY-number-1.4)/0.6))
+        }
+    }
+
+    function opacityEased(number, duration) {
+        if(scrollY <= number) return 0;
+        if(scrollY >= (number+duration)) return 0;
+        if(scrollY <= (number+0.3)){
+            return ease((scrollY-number)/0.3)
+        }
+
+        if((number+0.3) < scrollY && scrollY < (number+duration)) return 1;
+
+        else if((number+duration) <= scrollY){
+            return 1-(easeIn((scrollY-number-duration+0.6)/0.6))
+        }
+    }
+
+    function init() {
+        scrollY = window.scrollY/1000;
+        output.textContent = `scrollTop: ${scrollY}`;
+        let time = 0
+        $("#description").css({
+            top : marginEase(-0.6)*100-30+'%',
+            opacity : opacityEase(-0.6)*100+'%'
+        })
+        $("#titles").css({
+            top : marginEased(0, 4)*100+'%',
+            opacity : opacityEased(0, 4)*100+'%'
+        })
+        time += 4
+
+
+        $("#first-first").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        $("#1").text(
+            Math.trunc(Math.min(26, Math.max(0, (scrollY - (time+0.5))*26))) + '%'
+        )
+        time += 2
+        $("#first-second").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        $("#2").text(
+            90-Math.trunc(Math.min(23, Math.max(0, (scrollY - (time+0.5))*23))) + '%.'
+        )
+        time += 2
+        $("#first-third").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#first-fourth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#first-fifth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#first-sixth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-first").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-second").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-third").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-fourth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-fifth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#second-sixth").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#third-first").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#third-second").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#third-third").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+        time += 2
+        $("#fin").css({
+            top : marginEase(time)*100+'%',
+            opacity : opacityEase(time)*100+'%'
+        })
+    }
 </script>
